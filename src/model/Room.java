@@ -1,5 +1,8 @@
 package model;
 
+import java.util.HashMap;
+import java.util.Set;
+
 /**
  * Class Room - a room in an adventure game.
  *
@@ -17,10 +20,11 @@ package model;
 public class Room 
 {
     private String description;
-    private Room northExit;
-    private Room southExit;
-    private Room eastExit;
-    private Room westExit;
+//    private Room northExit;
+//    private Room southExit;
+//    private Room eastExit;
+//    private Room westExit;
+    private HashMap<String, Room> exits;
 
     /**
      * Create a room described "description". Initially, it has
@@ -41,42 +45,26 @@ public class Room
      * @param south The south exit.
      * @param west The west exit.
      */
-    public void setExits(Room north, Room east, Room south, Room west) 
+    public void setExits(String direction, Room destination) 
     {
-        if(north != null)
-            northExit = north;
-        if(east != null)
-            eastExit = east;
-        if(south != null)
-            southExit = south;
-        if(west != null)
-            westExit = west;
+        exits.put(direction, destination);
     }
 
     /**
      * @return The description of the room.
      */
     public String getDescription() {
-    	
         return description;
     }
     
     public String getExits() {
-    	String exits = "";
-		if (northExit != null) {
-			exits = exits + " north";
-		}
-		if (eastExit != null) {
-			exits = exits + " east";
-		}
-		if (southExit != null) {
-			exits = exits + " south";
-		}
-		if (westExit != null) {
-			exits = exits + " west";
-		}
-		return exits;    
+    	String exitString = "";
+    	Set<String> exitDirections = exits.keySet(); // all directions 
+    	for(String dir : exitDirections) {
+    		exitString = exitString + dir + " ";
+    	}
     	
+		return exitString;    
 	}
 
 	public Room getExit(String direction) {
