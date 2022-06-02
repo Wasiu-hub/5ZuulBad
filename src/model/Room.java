@@ -64,16 +64,16 @@ public class Room
     public String getExits() {
     	String exits = "";
 		if (northExit != null) {
-			exits = exits + "north";
+			exits = exits + " north";
 		}
 		if (eastExit != null) {
-			exits = exits + "east";
+			exits = exits + " east";
 		}
 		if (southExit != null) {
-			exits = exits + "south";
+			exits = exits + " south";
 		}
 		if (westExit != null) {
-			exits = exits + "west";
+			exits = exits + " west";
 		}
 		return exits;    
     	

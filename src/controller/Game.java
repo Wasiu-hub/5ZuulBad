@@ -203,45 +203,33 @@ public class Game
         }
     }
 }
+
 // OUTPUT IN CONSOLE BELOW
 /**
- * Welcome to the World of Zuul!
- World of Zuul is a new, incredibly boring adventure game.
- Type 'help' if you need help.
+ * 
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.
+Type 'help' if you need help.
 
- You are outside the main entrance of the university
- Exits: east south west
- > help
- You are lost. You are alone. You wander
- around at the university.
+You are outside the main entrance of the university
+Exits:  east south west
 
- Your command words are:
- go quit help
- > go
- Go where?
- > east
- I don't know what you mean...
- > go east
- You are in a lecture theater
- Exits: west
- > go west
- You are outside the main entrance of the university
- Exits: east south west
- > go south
- You are in a computing lab
- Exits: north east
- > go east
- You are in the computing admin office
- Exits: west
- > go west
- You are in a computing lab
- Exits: north east
- > go north
- You are outside the main entrance of the university
- Exits: east south west
- > go west
- You are in the campus pub
- Exits: east
- > quit
- Thank you for playing.  Good bye.
- */
+> go east
+You are in a lecture theater
+Exits:  west
+
+> go west
+You are outside the main entrance of the university
+Exits:  east south west
+
+> help
+You are lost. You are alone. You wander
+around at the university.
+
+Your command words are:
+   go quit help
+> quit
+Thank you for playing.  Good bye.
+
+ * */
+
