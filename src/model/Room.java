@@ -56,26 +56,43 @@ public class Room
     /**
      * @return The description of the room.
      */
-    public String getDescription()
-    {
-        return description;
+    public String getDescription() {
+    	String exits = "";
+		if (northExit != null) {
+			exits = exits + "north";
+		}
+		if (eastExit != null) {
+			exits = exits + "east";
+		}
+		if (southExit != null) {
+			exits = exits + "south";
+		}
+		if (westExit != null) {
+			exits = exits + "west";
+		}
+		return exits;
+    
+        // return description;
     }
 
-	public String getDescriptions() {
-		if (currentRoom.northExit != null) {
-			System.out.print("north ");
-		}
-		if (currentRoom.eastExit != null) {
-			System.out.print("east ");
-		}
-		if (currentRoom.southExit != null) {
-			System.out.print("south ");
-		}
-		if (currentRoom.westExit != null) {
-			System.out.print("west ");
-		}
-		return null;
+	public Room getExit(String direction) {
+		if(direction.equals("north")) {
+            return northExit;
+        }
+        if(direction.equals("east")) {
+            return eastExit;
+        }
+        if(direction.equals("south")) {
+            return southExit;
+        }
+        if(direction.equals("west")) {
+            return westExit;
+        }
+        return null;
 	}
+
+
+
 
 }
 
