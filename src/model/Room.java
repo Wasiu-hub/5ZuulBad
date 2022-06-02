@@ -61,20 +61,21 @@ public class Room
         return description;
     }
 
-	public String getDescriptions() {
-		if (currentRoom.northExit != null) {
-			System.out.print("north ");
+	public String getExits() {
+		String exits = "";
+		if (northExit != null) {
+			exits = exits + "north";
 		}
-		if (currentRoom.eastExit != null) {
-			System.out.print("east ");
+		if (eastExit != null) {
+			exits = exits + "east";
 		}
-		if (currentRoom.southExit != null) {
-			System.out.print("south ");
+		if (southExit != null) {
+			exits = exits + "south";
 		}
-		if (currentRoom.westExit != null) {
-			System.out.print("west ");
+		if (westExit != null) {
+			exits = exits + "west";
 		}
-		return null;
+		return exits;
 	}
 
 }
