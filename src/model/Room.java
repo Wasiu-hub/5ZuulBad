@@ -57,6 +57,11 @@ public class Room
      * @return The description of the room.
      */
     public String getDescription() {
+    	
+        return description;
+    }
+    
+    public String getExits() {
     	String exits = "";
 		if (northExit != null) {
 			exits = exits + "north";
@@ -70,10 +75,9 @@ public class Room
 		if (westExit != null) {
 			exits = exits + "west";
 		}
-		return exits;
-    
-        // return description;
-    }
+		return exits;    
+    	
+	}
 
 	public Room getExit(String direction) {
 		if(direction.equals("north")) {
@@ -90,6 +94,8 @@ public class Room
         }
         return null;
 	}
+
+	
 
 
 
