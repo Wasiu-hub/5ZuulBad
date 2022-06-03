@@ -1,6 +1,7 @@
 package controller;
 
 import model.Command;
+import model.Player;
 import model.Room;
 import util.CommandWords;
 import util.Parser;
@@ -25,6 +26,7 @@ import util.Parser;
 public class Game {
 	private Parser parser;
 	private Room currentRoom;
+	private Player player;
 
 	/**
 	 * The main method: this is what happens first when the program is run. This
@@ -41,6 +43,7 @@ public class Game {
 	public Game() {
 		createRooms();
 		parser = new Parser();
+		player = new Player();
 	}
 
 	/**
@@ -97,6 +100,7 @@ public class Game {
 		while (!finished) {
 			Command command = parser.getCommand();
 			finished = processCommand(command);
+			System.out.println(player);
 		}
 		System.out.println("Thank you for playing.  Good bye.");
 	}
