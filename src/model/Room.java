@@ -19,10 +19,6 @@ import java.util.Set;
  */
 public class Room {
 	private String description;
-//    private Room northExit;
-//    private Room southExit;
-//    private Room eastExit;
-//    private Room westExit;
 	private HashMap<String, Room> exits;
 
 	/**

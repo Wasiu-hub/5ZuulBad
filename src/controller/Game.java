@@ -204,6 +204,7 @@ public class Game {
 
 // OUTPUT IN CONSOLE BELOW
 /**
+
 Welcome to the World of Zuul!
 World of Zuul is a new, incredibly boring adventure game.
 Type 'help' if you need help.
@@ -211,7 +212,27 @@ Type 'help' if you need help.
 You are outside the main entrance of the university
 Exits: east south west 
 
-> 
+> go east
+You are in a lecture theater
+Exits: west 
+
+> go west
+You are outside the main entrance of the university
+Exits: east south west 
+
+> go south
+You are in a computing lab
+Exits: east north 
+
+> help
+You are lost. You are alone. You wander
+around at the university.
+
+Your command words are:
+   go quit help
+> quit
+Thank you for playing.  Good bye.
+
 
  * 
  */
