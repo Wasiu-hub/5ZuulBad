@@ -195,6 +195,7 @@ public class Game {
 		} else {
 			currentRoom = nextRoom;
 			look();
+			player.move();
 		}
 	}
 
@@ -216,6 +217,7 @@ public class Game {
 
 // OUTPUT IN CONSOLE BELOW
 /**
+
 Welcome to the World of Zuul!
 World of Zuul is a new, incredibly boring adventure game.
 Type 'help' if you need help.
@@ -227,5 +229,27 @@ Exits: east south west up
 You are outside the main entrance of the university
 Exits: east south west up 
 
-model.Player@3d24753a
+Score is 0
+Health is 10
+
+> up
+I don't know what you mean...
+Score is 0
+Health is 10
+
+> go up
+You are a huge old oak tree
+Exits: down 
+
+Score is 1
+Health is 8
+
+> go down
+You are outside the main entrance of the university
+Exits: east south west up 
+
+Score is 2
+Health is 6
+
+> 
 >  */

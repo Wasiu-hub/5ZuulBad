@@ -35,6 +35,11 @@ public class Player {
 		this.health = health;
 	}
 	
+	public void move() { // corresponds to the instruction on lecture note page 20
+		score = score + 1;
+		health =  health - 2;
+	}
+	
 	public String toString() {
 		String description = "";
 		description = description + "Score is " + score +"\n";
