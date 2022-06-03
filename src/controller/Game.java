@@ -228,6 +228,12 @@ Exits: down
 You are outside the main entrance of the university
 Exits: east south west up 
 
+> help
+You are lost. You are alone. You wander
+around at the university.
+
+Your command words are:
+   go quit help
 > 
  * 
  */
