@@ -204,11 +204,14 @@ public class Game {
 
 // OUTPUT IN CONSOLE BELOW
 /**
- Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.util.HashMap.put(Object, Object)" because "this.exits" is null
-	at model.Room.setExit(Room.java:48)
-	at controller.Game.createRooms(Game.java:61)
-	at controller.Game.<init>(Game.java:41)
-	at controller.Game.main(Game.java:33)
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.
+Type 'help' if you need help.
+
+You are outside the main entrance of the university
+Exits: east south west 
+
+> 
 
  * 
  */

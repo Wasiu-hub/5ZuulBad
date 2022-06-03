@@ -33,6 +33,7 @@ public class Room {
 	 */
 	public Room(String description) {
 		this.description = description;
+		exits = new HashMap<String, Room>();
 	}
 
 	/**
