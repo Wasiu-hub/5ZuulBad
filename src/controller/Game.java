@@ -46,21 +46,26 @@ public class Game {
 	 * Create all the rooms and link their exits together.
 	 */
 	private void createRooms() {
-		Room outside, theater, pub, lab, office;
+		Room outside, theater, pub, lab, office, tree; // variable for each destination
 
-		// create the rooms
+		// create the rooms(above variables) with descriptions below
+		// and link them together
 		outside = new Room("outside the main entrance of the university");
 		theater = new Room("in a lecture theater");
 		pub = new Room("in the campus pub");
 		lab = new Room("in a computing lab");
 		office = new Room("in the computing admin office");
+		// tree created here corresponds to lecture note page 13
+		tree = new Room ("a huge old oak tree");
 
-		// initialise room exits
-
+		// initialise room exits 
+		// below more readable way of creating the map
 		// outside.setExits(null, theater, lab, pub);
 		outside.setExit("east", theater);
 		outside.setExit("south", lab);
 		outside.setExit("west", pub);
+		outside.setExit("up", tree);
+		tree.setExit("down", outside);
 
 		// theater.setExit(null, null, null, outside);
 		theater.setExit("west", outside);
@@ -104,14 +109,7 @@ public class Game {
 		System.out.println("World of Zuul is a new, incredibly boring adventure game.");
 		System.out.println("Type 'help' if you need help.");
 		System.out.println();
-		System.out.println("You are " + currentRoom.getDescription());
-		System.out.print("Exits: ");
-
-		String destinations = currentRoom.getExit();
-
-		System.out.println(destinations);
-
-		System.out.println();
+		look();
 	}
 
 	/**
@@ -135,9 +133,22 @@ public class Game {
 			goRoom(command);
 		} else if (commandWord.equals("quit")) {
 			wantToQuit = quit(command);
+		} else if(commandWord.equals("look")) {
+			look();
 		}
 
 		return wantToQuit;
+	}
+	
+	public void look() { // tells us where we are and where we can go
+		System.out.println("You are " + currentRoom.getDescription());
+		System.out.print("Exits: ");
+
+		String destinations = currentRoom.getExit();
+
+		System.out.println(destinations); // printing where we can go
+
+		System.out.println();
 	}
 
 	// implementations of user commands:
@@ -175,14 +186,7 @@ public class Game {
 			System.out.println("There is no door!");
 		} else {
 			currentRoom = nextRoom;
-			System.out.println("You are " + currentRoom.getDescription());
-
-			System.out.print("Exits: ");
-
-			String destinations = currentRoom.getExit();
-
-			System.out.println(destinations); // printing where we can go
-			System.out.println();
+			look();
 		}
 	}
 
@@ -210,29 +214,20 @@ World of Zuul is a new, incredibly boring adventure game.
 Type 'help' if you need help.
 
 You are outside the main entrance of the university
-Exits: east south west 
+Exits: east south west up 
 
-> go east
-You are in a lecture theater
-Exits: west 
-
-> go west
+> look
 You are outside the main entrance of the university
-Exits: east south west 
+Exits: east south west up 
 
-> go south
-You are in a computing lab
-Exits: east north 
+> go up
+You are a huge old oak tree
+Exits: down 
 
-> help
-You are lost. You are alone. You wander
-around at the university.
+> go down
+You are outside the main entrance of the university
+Exits: east south west up 
 
-Your command words are:
-   go quit help
-> quit
-Thank you for playing.  Good bye.
-
-
+> 
  * 
  */
