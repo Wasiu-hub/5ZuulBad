@@ -46,9 +46,10 @@ public class Game {
 	 * Create all the rooms and link their exits together.
 	 */
 	private void createRooms() {
-		Room outside, theater, pub, lab, office, tree;
+		Room outside, theater, pub, lab, office, tree; // variable for each destination
 
-		// create the rooms
+		// create the rooms(above variables) with descriptions below
+		// and link them together
 		outside = new Room("outside the main entrance of the university");
 		theater = new Room("in a lecture theater");
 		pub = new Room("in the campus pub");
@@ -57,13 +58,14 @@ public class Game {
 		// tree created here corresponds to lecture note page 13
 		tree = new Room ("a huge old oak tree");
 
-		// initialise room exits
-
+		// initialise room exits 
+		// below more readable way of creating the map
 		// outside.setExits(null, theater, lab, pub);
 		outside.setExit("east", theater);
 		outside.setExit("south", lab);
 		outside.setExit("west", pub);
 		outside.setExit("up", tree);
+		tree.setExit("down", outside);
 
 		// theater.setExit(null, null, null, outside);
 		theater.setExit("west", outside);
@@ -207,16 +209,16 @@ public class Game {
 
 // OUTPUT IN CONSOLE BELOW
 /**
-Welcome to the World of Zuul!
-World of Zuul is a new, incredibly boring adventure game.
-Type 'help' if you need help.
-
 You are outside the main entrance of the university
 Exits: east south west up 
 
 > go up
 You are a huge old oak tree
-Exits: 
+Exits: down 
+
+> go down
+You are outside the main entrance of the university
+Exits: east south west up 
 
 > 
  * 
