@@ -4,10 +4,12 @@ public class Player {
 
 	private int score;
 	private int health;
+	private Room currentLocation; // as required in lecture note page 21
 	
 	public Player() {
 		score = 0;
 		health = 10;
+		currentLocation = null;
 	}
 	
 	/**
@@ -35,6 +37,22 @@ public class Player {
 		this.health = health;
 	}
 	
+	
+	
+	/**
+	 * @return the currentLocation
+	 */
+	public Room getCurrentLocation() {
+		return currentLocation;
+	}
+
+	/**
+	 * @param currentLocation the currentLocation to set
+	 */
+	public void setCurrentLocation(Room currentLocation) {
+		this.currentLocation = currentLocation;
+	}
+
 	public void move() { // corresponds to the instruction on lecture note page 20
 		score = score + 1;
 		health =  health - 2;

@@ -24,8 +24,7 @@ import util.Parser;
  */
 
 public class Game {
-	private Parser parser;
-	private Room currentRoom;
+	private Parser parser; // talks to the user
 	private Player player;
 
 	/**
@@ -41,9 +40,11 @@ public class Game {
 	 * Create the game and initialise its internal map.
 	 */
 	public Game() {
+		
+		player = new Player();
 		createRooms();
 		parser = new Parser();
-		player = new Player();
+		
 	}
 
 	/**
@@ -84,7 +85,7 @@ public class Game {
 		// office.setExits(null, null, null, lab);
 		office.setExit("west", lab);
 
-		currentRoom = outside; // start game outside
+		player.setCurrentLocation(outside); // start game outside
 	}
 
 	/**
@@ -146,10 +147,10 @@ public class Game {
 	}
 	
 	public void look() { // tells us where we are and where we can go
-		System.out.println("You are " + currentRoom.getDescription());
+		System.out.println("You are " + player.getCurrentLocation().getDescription());
 		System.out.print("Exits: ");
 
-		String destinations = currentRoom.getExit();
+		String destinations = player.getCurrentLocation().getExit();
 
 		System.out.println(destinations); // printing where we can go
 
@@ -188,12 +189,12 @@ public class Game {
 
 		// Try to leave current room.
 		Room nextRoom = null;
-		nextRoom = currentRoom.getExit(direction); // giving exit in this direction
+		nextRoom = player.getCurrentLocation().getExit(direction); // giving exit in this direction
 
 		if (nextRoom == null) {
 			System.out.println("There is no door!");
 		} else {
-			currentRoom = nextRoom;
+			player.setCurrentLocation(nextRoom);
 			look();
 			player.move();
 		}
@@ -225,13 +226,6 @@ Type 'help' if you need help.
 You are outside the main entrance of the university
 Exits: east south west up 
 
-> look
-You are outside the main entrance of the university
-Exits: east south west up 
-
-Score is 0
-Health is 10
-
 > up
 I don't know what you mean...
 Score is 0
@@ -251,5 +245,38 @@ Exits: east south west up
 Score is 2
 Health is 6
 
-> 
->  */
+> go east
+You are in a lecture theater
+Exits: west 
+
+Score is 3
+Health is 4
+
+> go wes
+There is no door!
+Score is 3
+Health is 4
+
+> go west
+You are outside the main entrance of the university
+Exits: east south west up 
+
+Score is 4
+Health is 2
+
+> help
+You are lost. You are alone. You wander
+around at the university.
+
+Your command words are:
+go quit help look 
+Score is 4
+Health is 2
+
+> quit
+Score is 4
+Health is 2
+
+Thank you for playing.  Good bye.
+
+*/
