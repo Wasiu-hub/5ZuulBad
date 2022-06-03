@@ -40,4 +40,14 @@ public class CommandWords
         // if we get here, the string was not found in the commands
         return false;
     }
+
+//	public static String listCommands() { // static bcos we dont have access 
+//		// to the command words in the GameClass
+//		String commands = "";
+//		for (String c : validCommands) {
+//			commands += c;
+//			commands += " ";
+//		}
+//		return commands;
+//	}
 }
