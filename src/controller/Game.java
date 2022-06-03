@@ -216,7 +216,6 @@ public class Game {
 
 // OUTPUT IN CONSOLE BELOW
 /**
-
 Welcome to the World of Zuul!
 World of Zuul is a new, incredibly boring adventure game.
 Type 'help' if you need help.
@@ -228,20 +227,5 @@ Exits: east south west up
 You are outside the main entrance of the university
 Exits: east south west up 
 
-> go up
-You are a huge old oak tree
-Exits: down 
-
-> go down
-You are outside the main entrance of the university
-Exits: east south west up 
-
-> help
-You are lost. You are alone. You wander
-around at the university.
-
-Your command words are:
-   go quit help
-> 
- * 
- */
+model.Player@3d24753a
+>  */
