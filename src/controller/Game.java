@@ -2,6 +2,7 @@ package controller;
 
 import model.Command;
 import model.Room;
+import util.CommandWords;
 import util.Parser;
 
 /**
@@ -162,7 +163,10 @@ public class Game {
 		System.out.println("around at the university.");
 		System.out.println();
 		System.out.println("Your command words are:");
-		System.out.println("   go quit help");
+		System.out.println("   go quit help"); // commented out to solve 
+		// the problem explained on lecture not page 14, point 3
+		//System.out.println(CommandWords.listCommands());
+		
 	}
 
 	/**
