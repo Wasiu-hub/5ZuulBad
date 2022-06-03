@@ -19,10 +19,6 @@ import java.util.Set;
  */
 public class Room {
 	private String description;
-//    private Room northExit;
-//    private Room southExit;
-//    private Room eastExit;
-//    private Room westExit;
 	private HashMap<String, Room> exits;
 
 	/**
@@ -33,6 +29,7 @@ public class Room {
 	 */
 	public Room(String description) {
 		this.description = description;
+		exits = new HashMap<String, Room>();
 	}
 
 	/**
@@ -44,7 +41,7 @@ public class Room {
 	 * @param south The south exit.
 	 * @param west  The west exit.
 	 */
-	public void setExits(String direction, Room destination) {
+	public void setExit(String direction, Room destination) {
 		exits.put(direction, destination);
 	}
 
@@ -55,7 +52,7 @@ public class Room {
 		return description;
 	}
 
-	public String getExits() {
+	public String getExit() {
 		String exitString = "";
 		Set<String> exitDirections = exits.keySet(); // all directions
 		for (String dir : exitDirections) {
