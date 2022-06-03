@@ -35,7 +35,12 @@ public class Player {
 		this.health = health;
 	}
 	
-	
+	public String toString() {
+		String description = "";
+		description = description + "Score is " + score +"\n";
+		description = description + "Health is " + health + "\n";
+		return description;
+	}
 }
 
 
