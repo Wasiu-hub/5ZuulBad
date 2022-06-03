@@ -109,14 +109,7 @@ public class Game {
 		System.out.println("World of Zuul is a new, incredibly boring adventure game.");
 		System.out.println("Type 'help' if you need help.");
 		System.out.println();
-		System.out.println("You are " + currentRoom.getDescription());
-		System.out.print("Exits: ");
-
-		String destinations = currentRoom.getExit();
-
-		System.out.println(destinations);
-
-		System.out.println();
+		look();
 	}
 
 	/**
@@ -140,9 +133,22 @@ public class Game {
 			goRoom(command);
 		} else if (commandWord.equals("quit")) {
 			wantToQuit = quit(command);
+		} else if(commandWord.equals("look")) {
+			look();
 		}
 
 		return wantToQuit;
+	}
+	
+	public void look() { // tells us where we are and where we can go
+		System.out.println("You are " + currentRoom.getDescription());
+		System.out.print("Exits: ");
+
+		String destinations = currentRoom.getExit();
+
+		System.out.println(destinations); // printing where we can go
+
+		System.out.println();
 	}
 
 	// implementations of user commands:
@@ -180,14 +186,7 @@ public class Game {
 			System.out.println("There is no door!");
 		} else {
 			currentRoom = nextRoom;
-			System.out.println("You are " + currentRoom.getDescription());
-
-			System.out.print("Exits: ");
-
-			String destinations = currentRoom.getExit();
-
-			System.out.println(destinations); // printing where we can go
-			System.out.println();
+			look();
 		}
 	}
 
@@ -209,6 +208,15 @@ public class Game {
 
 // OUTPUT IN CONSOLE BELOW
 /**
+
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.
+Type 'help' if you need help.
+
+You are outside the main entrance of the university
+Exits: east south west up 
+
+> look
 You are outside the main entrance of the university
 Exits: east south west up 
 
