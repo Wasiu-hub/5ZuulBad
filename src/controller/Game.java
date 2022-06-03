@@ -46,7 +46,7 @@ public class Game {
 	 * Create all the rooms and link their exits together.
 	 */
 	private void createRooms() {
-		Room outside, theater, pub, lab, office;
+		Room outside, theater, pub, lab, office, tree;
 
 		// create the rooms
 		outside = new Room("outside the main entrance of the university");
@@ -54,6 +54,8 @@ public class Game {
 		pub = new Room("in the campus pub");
 		lab = new Room("in a computing lab");
 		office = new Room("in the computing admin office");
+		// tree created here corresponds to lecture note page 13
+		tree = new Room ("a huge old oak tree");
 
 		// initialise room exits
 
@@ -61,6 +63,7 @@ public class Game {
 		outside.setExit("east", theater);
 		outside.setExit("south", lab);
 		outside.setExit("west", pub);
+		outside.setExit("up", tree);
 
 		// theater.setExit(null, null, null, outside);
 		theater.setExit("west", outside);
@@ -204,35 +207,17 @@ public class Game {
 
 // OUTPUT IN CONSOLE BELOW
 /**
-
 Welcome to the World of Zuul!
 World of Zuul is a new, incredibly boring adventure game.
 Type 'help' if you need help.
 
 You are outside the main entrance of the university
-Exits: east south west 
+Exits: east south west up 
 
-> go east
-You are in a lecture theater
-Exits: west 
+> go up
+You are a huge old oak tree
+Exits: 
 
-> go west
-You are outside the main entrance of the university
-Exits: east south west 
-
-> go south
-You are in a computing lab
-Exits: east north 
-
-> help
-You are lost. You are alone. You wander
-around at the university.
-
-Your command words are:
-   go quit help
-> quit
-Thank you for playing.  Good bye.
-
-
+> 
  * 
  */
