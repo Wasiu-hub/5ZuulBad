@@ -1,6 +1,7 @@
 package controller;
 
 import model.Command;
+import model.Player;
 import model.Room;
 import util.CommandWords;
 import util.Parser;
@@ -25,6 +26,7 @@ import util.Parser;
 public class Game {
 	private Parser parser;
 	private Room currentRoom;
+	private Player player;
 
 	/**
 	 * The main method: this is what happens first when the program is run. This
@@ -41,6 +43,7 @@ public class Game {
 	public Game() {
 		createRooms();
 		parser = new Parser();
+		player = new Player();
 	}
 
 	/**
@@ -97,6 +100,7 @@ public class Game {
 		while (!finished) {
 			Command command = parser.getCommand();
 			finished = processCommand(command);
+			System.out.println(player);
 		}
 		System.out.println("Thank you for playing.  Good bye.");
 	}
@@ -212,7 +216,6 @@ public class Game {
 
 // OUTPUT IN CONSOLE BELOW
 /**
-
 Welcome to the World of Zuul!
 World of Zuul is a new, incredibly boring adventure game.
 Type 'help' if you need help.
@@ -224,20 +227,5 @@ Exits: east south west up
 You are outside the main entrance of the university
 Exits: east south west up 
 
-> go up
-You are a huge old oak tree
-Exits: down 
-
-> go down
-You are outside the main entrance of the university
-Exits: east south west up 
-
-> help
-You are lost. You are alone. You wander
-around at the university.
-
-Your command words are:
-   go quit help
-> 
- * 
- */
+model.Player@3d24753a
+>  */
