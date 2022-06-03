@@ -41,13 +41,13 @@ public class CommandWords
         return false;
     }
 
-//	public static String listCommands() { // static bcos we dont have access 
-//		// to the command words in the GameClass
-//		String commands = "";
-//		for (String c : validCommands) {
-//			commands += c;
-//			commands += " ";
-//		}
-//		return commands;
-//	}
+	public static String listCommands() { // static bcos we dont have access 
+		// to the command words in the GameClass
+		String commands = "";
+		for (String c : validCommands) {
+			commands += c;
+			commands += " ";
+		}
+		return commands;
+	}
 }
